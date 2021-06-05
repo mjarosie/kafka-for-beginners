@@ -7,10 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-/**
- * Hello world!
- *
- */
 public class ProducerDemoKeys
 {
     public static void main( String[] args )

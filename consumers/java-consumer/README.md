@@ -1,12 +1,12 @@
-# java-producer
+# java-consumer
 
-To run the producer, make sure the kafka cluster is up first,
+To run the consumer, make sure the kafka cluster is up first,
 then `cd` to this directory and run:
 
 ```bash
-docker run -v $(pwd):/app/java-producer -v $(pwd)/.m2:/root/.m2 \
--w /app/java-producer --network kafka-cluster maven:3-adoptopenjdk-11 \
-mvn compile exec:java -Dexec.mainClass="com.mjarosie.ProducerDemo"
+docker run -v $(pwd):/app/java-consumer -v $(pwd)/.m2:/root/.m2 \
+-w /app/java-consumer --network kafka-cluster maven:3-adoptopenjdk-11 \
+mvn compile exec:java -Dexec.mainClass="com.mjarosie.ConsumerDemo"
 ```
 
 We're reusing Maven Local Repository between containers to save bandwidth,
