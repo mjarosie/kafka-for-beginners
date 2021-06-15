@@ -34,6 +34,20 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.1
+    container_name: es01
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - kafka-cluster
+
 networks:
   kafka-cluster:
     name: kafka-cluster
