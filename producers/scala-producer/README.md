@@ -17,7 +17,7 @@ add `-Dsbt.server.forcestart=true --batch` options to `sbt` command:
 docker run --rm -v $(pwd):/app/scala-producer \
 -w /app/scala-producer --network kafka-cluster \
 hseeberger/scala-sbt:11.0.2-oraclelinux7_1.4.7_2.13.4 \
-sbt -Dsbt.server.forcestart=true --batch "run-main com.mjarosie.ProducerDemo"
+sbt -Dsbt.server.forcestart=true --batch "runMain com.mjarosie.ProducerDemo"
 ```
 
 You can change the name of the main class that you want to run for exploring different examples.
